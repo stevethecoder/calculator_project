@@ -17,5 +17,9 @@ public class Calc {
 	public double divide(double a, double b){
 		return a/b;
 	}
+	
+	public double percentage(double a, double b){
+		return a/b;
+	}
 
 }

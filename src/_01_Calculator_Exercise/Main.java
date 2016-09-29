@@ -8,13 +8,13 @@ public class Main {
 	
 	public static void main(String[] args){
 		
-		Calc calc = new Calc();
+        Calc calc = new Calc();
 		double a = 0;
 		double b = 0;
 		String sign = "";
 		double result = 0;
 		
-		System.out.println("Welcome to My Calculator");
+		System.out.println("Welcome to My Calculator \r");
 		
 		//BufferedReader - Reads text from a character-input stream, buffering characters so as to provide for the efficient reading of characters, arrays, and lines
 		
@@ -25,14 +25,15 @@ public class Main {
 		//"Try" and "catch" are represent the handling of exceptions due to data or coding errors during program execution. 
 		//A try block is the block of code in which exceptions occur. A catch block catches and handles try block exceptions.
 		
+		
 		try {
-			System.out.println("Please enter first number, then press Return:");
+			System.out.println("First number, then press Enter:");
 			a = Double.parseDouble(reader.readLine());
-			System.out.println("Please enter second number, then press Return:");
-			b = Double.parseDouble(reader.readLine());
-			System.out.println("Please enter the calculation type desired:");
-			System.out.println("Options: +(add) or(subtract) - or *(multiply) or /(divide), then press Return.");
+			System.out.println("Enter the calculation type desired...");
+			System.out.println("+(add) or-(subtract) or *(multiply) or /(divide) or %(percentage), then press Enter:");
 			sign = reader.readLine();
+			System.out.println("Second number, then press Enter:");
+			b = Double.parseDouble(reader.readLine());
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -45,23 +46,33 @@ public class Main {
 		switch(sign){
 		case "+":
 			result = calc.add(a, b);
-			System.out.println("Result: ");
+			System.out.println("");
+			System.out.println("Result:");
 			System.out.println(result);
 			break;
 		case "-":
 			result = calc.subtract(a,b);
+			System.out.println("");
 			System.out.println("Result: ");
 			System.out.println(result);
 			break;
 		case "*":
 			result = calc.multiply(a, b);
+			System.out.println("");
 			System.out.println("Result: ");
 			System.out.println(result);
 			break;
 		case "/":
 			result = calc.divide(a, b);
+			System.out.println("");
 			System.out.println("Result: ");
 			System.out.println(result);
+			break;
+		case "%":
+			result = calc.percentage(a, b);
+			System.out.println("");
+			System.out.println("Result: ");
+			System.out.println(result + "%");
 			break;
 		default:
 			System.out.println("Wrong sign!");
