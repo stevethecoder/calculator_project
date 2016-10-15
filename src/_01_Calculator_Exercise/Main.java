@@ -22,7 +22,7 @@ public class Main {
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader (System.in));
 		
-		//"Try" and "catch" are represent the handling of exceptions due to data or coding errors during program execution. 
+		//"Try" and "catch" represent the handling of exceptions due to data or coding errors during program execution. 
 		//A try block is the block of code in which exceptions occur. A catch block catches and handles try block exceptions.
 		
 		
@@ -47,7 +47,7 @@ public class Main {
 		case "+":
 			result = calc.add(a, b);
 			System.out.println("");
-			System.out.println("Result:");
+			System.out.println("Result: ");
 			System.out.println(result);
 			break;
 		case "-":
@@ -72,10 +72,10 @@ public class Main {
 			result = calc.percentage(a, b);
 			System.out.println("");
 			System.out.println("Result: ");
-			System.out.println(result + "%");
+			System.out.println(result*100 + "%");
 			break;
 		default:
-			System.out.println("Wrong sign!");
+			System.out.println("You did something wrong! Please try again.");
 		
 		
 		}
